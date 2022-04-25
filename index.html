@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./sytyle.css" />
+    <link rel="shortcut icon" href="./imag/favicon.ico" type="image/x-icon" />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/icon?family=Material+Icons"
+    />
+    <link
+      rel="stylesheet"
+      href="https://code.getmdl.io/1.3.0/material.indigo-pink.min.css"
+    />
+    <script defer src="https://code.getmdl.io/1.3.0/material.min.js"></script>
+
+    <title>Lista de Casamento</title>
+  </head>
+  <body>
+    <nav class="navegacao">
+      <input id="nomeNoivo" type="text" placeholder="Nome do Noivo" />
+      <input id="nomeNoiva" type="text" placeholder="Nome da Noiva" />
+
+      <button
+        id="criar-lista"
+        class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent"
+        onclick="titulo()"
+      >
+        Criar Lista
+      </button>
+    </nav>
+
+    <header>
+      <h1 class="titulo">Lista de Casamento</h1>
+      <p id="noivo">Rafael</p>
+      <p id="noiva">Renata</p>
+      <img src="./imag/cabecalho.jpg" alt="" />
+    </header>
+
+    <main>
+      <div class="container__lista">
+        <div class="card-lista">
+          <h1>Lista</h1>
+        </div>
+        <div class="card">
+          <div class="lineInput">
+            <label>Digite Seu Produto</label>
+            <input
+              type="text"
+              id="inputProduto"
+              placeholder="Ex:Jogo de Jantar"
+            />
+          </div>
+
+          <button id="btnAdicionar" onclick="inserirItem()">Adicionar</button>
+        </div>
+        <div class="content">
+          <table border="1">
+            <thead>
+              <th><div class="material-icons">checklist</div></th>
+              <th>Produto</th>
+              <th>Valor</th>
+              <th><div class="material-icons">delete_forever</div></th>
+            </thead>
+            <tbody id="corpoLista"></tbody>
+          </table>
+        </div>
+        <div class="card__valorTotal">
+          <h2 class="texto">R$</h2>
+          <h2 id="valor" class="valor">100,00</h2>
+          <p class="material-icons">point_of_sale</p>
+        </div>
+      </div>
+    </main>
+
+    <!-- Modal-->
+
+    <div id="dv-modal" class="modal" data-id="${indice}">
+      <div class="modal-container">
+        <div class="modal-header">
+          <h4 class="dialog__title">Valor do Produto:</h4>
+        </div>
+        <div class="modal-body">
+          <div class="mdl-textfield mdl-js-textfield">
+            <input
+              class="mdl-textfield__input"
+              type="text"
+              pattern="-?[0-9]*(\.[0-9]+)?"
+              id="inputValor"
+            />
+            <label class="mdl-textfield__label" for="inputValor">R$...</label>
+            <span class="mdl-textfield__error"
+              >Este valor não é um valor númerico !</span
+            >
+          </div>
+        </div>
+        <div class="modal-footer"></div>
+      </div>
+    </div>
+
+    <script
+      src="https://kit.fontawesome.com/f06f283b2d.js"
+      crossorigin="anonymous"
+    ></script>
+
+    <script src="./index.js"></script>
+    <footer>
+      <p class="footer">
+        Dayane Barros De Oliveira Rocha Dev em Formação DevInHouse / NDD
+      </p>
+    </footer>
+  </body>
+</html>
